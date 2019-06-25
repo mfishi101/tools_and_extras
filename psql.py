@@ -10,9 +10,6 @@ import psycopg2
 import psycopg2.extras
 import click
 # My Libraries
-from sqlscripts import *
-from networkLists import *
-from mdxLists import *
 
 
 @click.command()
@@ -76,9 +73,6 @@ def psql(query, p, dbnetwork, tablefmt, csv, csvname, params, excel, params2, ro
     print("Finished at %s" % (strftime("%Y-%m-%d %H:%M:%S", localtime())))
     totaltime = ((endtime - starttime).total_seconds())
     print('Query finished in %s seconds' % totaltime)
-
-
-# cntrl c to escape
 
 
 if __name__ == "__main__":
