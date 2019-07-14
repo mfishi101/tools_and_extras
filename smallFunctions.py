@@ -33,23 +33,3 @@ def openpages(url, sleeptime):
 	for page in url:
 		webbrowser.open_new_tab(page)
 		sleep(sleeptime)
-
-
-def sendmailout(to, subject, body, attachments=False):
-	"""
-	Use outlook to send email
-	"""
-	outlook = win32.Dispatch('outlook.application')
-	mail = outlook.CreateItem(0)
-	mail.To = to
-	mail.Subject = subject
-	mail.Body = 'ph'
-	mail.HTMLBody = body  # html format
-
-	if attachments:
-		for attach in attachments:
-			mail.Attachments.Add(attach)
-
-	mail.Send()
-
-

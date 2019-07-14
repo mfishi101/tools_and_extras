@@ -5,7 +5,7 @@ import os
 import fire
 
 # parameters:
-directoryOut = 'C:\\users\\matthew.fisher\\Desktop\\' #full path directory excluding filename with double \ 
+directoryOut = '' #full path directory excluding filename with double \ 
 
 createFolder = 'DemoFolder' #create the output folder name
 
