@@ -16,7 +16,7 @@ import click
 @click.option('--params', '-pr', 'params', is_flag=True)
 @click.option('--excel', '-e', 'excel', is_flag=True)
 @click.option('--params2', '-pr2', 'params2', is_flag=True)
-@click.option('--arguments', '-arg', 'arguments', default=mdxNumbers)
+@click.option('--arguments', '-arg', 'arguments', default=list_of_data)
 @click.option('--p', '-p', is_flag=True)
 @click.option('--query', '-q', default=adhoc)
 @click.option('--dbnetwork', '-db', default=replicamain)
@@ -42,8 +42,8 @@ def psql(query, p, dbnetwork, tablefmt, csv, csvname, params, excel, params2, ro
         cursor.execute("%s %s" % (query, preview) % {'arg': params})
     elif params:
         if excel:
-            df = pd.read_csv('C:\\Users\\matthew.fisher\\Desktop\\data.csv')
-            listmdx = [df['waybillid'][i].strip('MDX') for i in range(len(df.index))]
+            df = pd.read_csv('path to csv')
+            listmdx = [df['column name'][i] for i in range(len(df.index))]
             strmdx = str(listmdx).strip('[]')
             params = strmdx
         else:
@@ -59,7 +59,7 @@ def psql(query, p, dbnetwork, tablefmt, csv, csvname, params, excel, params2, ro
     if csv:
         df = pd.DataFrame(np.array(records), columns=column_names)
         df.to_csv(
-            'C:\\Users\\matthew.fisher\\Desktop\\%s %s.csv' % (csvname, (strftime("%Y_%m_%d %H_%M_%S", localtime()))),
+            'path to download' % (csvname, (strftime("%Y_%m_%d %H_%M_%S", localtime()))),
             index=False, mode='w', header=True)
         print('Downloaded to csv with filename %s.csv' % csvname)
 

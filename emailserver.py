@@ -16,12 +16,12 @@ class Emailer:
   	yag.send(self.mailinglist, self.subject, self.contents, attachments=self.attachments)
 
 # example layout
-# testemail = Emailer(mailinglist=['mfishi101@gmail.com'],
+# testemail = Emailer(mailinglist=['xxx'],
 # 	 subject='subject',
 # 	 contents=[
 # 	    "This is the body, and here is just text",
 # 	    "You can find an audio file attached."
-# 	], attachments=['%s/assets/hublist.csv' % currentpath, '%s/assets/SLAguide.csv' % currentpath])
+# 	], attachments=['path to file'])
 
 # example running the emails
 # if __name__ == '__main__':
