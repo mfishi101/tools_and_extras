@@ -1,3 +1,4 @@
+# postgreSQL stats
 import psycopg2
 import psycopg2.extras
 from time import strftime, localtime
