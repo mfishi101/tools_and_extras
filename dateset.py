@@ -12,11 +12,11 @@ from holiday import SouthAfricanHolidays
 sa_bd = CustomBusinessDay(calendar=SouthAfricanHolidays()) 
 
 class Dateset:
-	def __init__(self,start=None,end=None,specific=None):
+	def __init__(self,start=None,end=None,specific=None,workdaycheck=None):
 		self.start = start
 		self.end = end
 		self.specific = specific
-
+		self.workdaycheck = workdaycheck
 
 	def nextworkday(self):
 		current_day = datetime.utcnow()
@@ -31,7 +31,6 @@ class Dateset:
 		nextworkday_result = '%s-%s-%s' % (get_date.year, get_date.month, get_date.day)
 
 		return nextworkday_result
-
 
 	def firstofmonth(self):
 		get_date = date.today() - relativedelta(months=+self.start)
@@ -58,7 +57,7 @@ class Dateset:
 
 	def datecheck(self):
 		get_date = pd.date_range(start='%s-%s-01' % (date.today().year, date.today().month), end=date.today().strftime('%Y-%m-%d'),  freq=sa_bd).shape[0]
-		if get_date == self.start:
+		if get_date == self.workdaycheck:
 			datecheck_result = True
 		else:
 			datecheck_result = False
