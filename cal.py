@@ -1,3 +1,5 @@
+# for windows users with no cal option
+
 import calendar
 from datetime import datetime
 import click
