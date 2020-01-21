@@ -87,4 +87,4 @@ def sendMail(emailSettings,emailDict,savelocation,reportType,dept,daterange,save
         print("successfully sent email to %s\n" % (msg['To']))
 
     except:
-        cprint(colored("ERROR: Emailing failed sent email to %s\n" % (msg['To']), 'red'))
+        print("ERROR: Emailing failed sent email to %s\n" % (msg['To']))
