@@ -39,3 +39,4 @@ def network(self, dbnetwork):
 		# cntrl c to escape
 	cursor.close()
 	conn.close()
+	
