@@ -1,9 +1,7 @@
 import os
 from multiprocessing import Pool, Process
-import sys
 import subprocess
 from time import localtime, strftime, sleep
-from datetime import datetime, time
 
 processes = (""" put list of processes here""")
 no_of_processes = len(processes)

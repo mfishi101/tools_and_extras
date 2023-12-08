@@ -32,11 +32,11 @@ def search(arguments):
         desc = [i.get_text() for i in  soup.find_all('span', class_='st')]
 
         for i in range(len(headings)):
-        	print('')
-        	print('%s. %s' % (i+1, headings[i]))
-        	print(links[i])
-        	print(desc[i])
-        	print('')
+            print('')
+            print('%s. %s' % (i+1, headings[i]))
+            print(links[i])
+            print(desc[i])
+            print('')
 
 
         # print()
